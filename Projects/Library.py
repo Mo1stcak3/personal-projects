@@ -3,44 +3,80 @@ def space():
     return
 
 def books():
-    book = int(input(
-"1. Atomic Habits by James Clear\n"
+    books = {
+        "1": "Atomic Habits by James Clear",
+        "2": "The 7 Habits of Highly Effective People by Stephen R. Covey",
+        "3": "The Power of Now by Eckhart Tolle",
+        "4": "Mindset: The New Psychology of Success by Carol S. Dweck",
+        "5": "The Subtle Art of Not Giving a F*ck by Mark Manson"
+    }
 
+    previews = {
+        "1": "Atomic Habits explains how small daily changes compound into remarkable results. Clear focuses on habit loops, identity-based change, and practical systems.",
+        "2": "Covey’s classic outlines seven timeless principles for effectiveness, from being proactive to sharpening the saw. It blends personal growth with leadership lessons.",
+        "3": "The Power of Now emphasizes living fully in the present moment, letting go of past regrets and future anxieties to achieve peace and awareness.",
+        "4": "Mindset explores fixed vs. growth mindsets, showing how beliefs about ability shape success in school, work, and relationships.",
+        "5": "Mark Manson delivers a blunt, humorous take on values and priorities, encouraging readers to focus only on what truly matters."
+    }
 
-"2. The 7 Habits of Highly Effective People by Stephen R. Covey\n"
+    kept_books = []
 
-"Review: Considered a timeless classic, reviewers highlight its focus on character ethics and long-term success.\n"
+    while True:
+        print("\nWelcome To The Library\n")
+        print("Available Books:")
+        for key, value in books.items():
+            print(f"{key}. {value}")
+        print("k. View Kept Books")
+        print("q. Quit")
+        
 
-"Preview: Covey introduces habits like 'Be Proactive' and 'Begin with the End in Mind' to transform personal and professional effectiveness.\n\n"
+        choice = input("\nSelect a book number: ")
 
-"3. The Power of Now by Eckhart Tolle\n"
+        if choice == "q":
+            print("Exiting Library. Goodbye!")
+            break
+        elif choice == "k":
+            if kept_books:
+                print("Your kept books:")
+                for book in kept_books:
+                    print(f"- {book}")
+            else:
+                print("You have no kept books.")
+        if choice in books:
+            print(f"\nYou selected: {books[choice]}")
+            while True:
+                print("\nOptions:")
+                print("a. Keep Book")
+                print("b. Preview and Review")
+                print("c. Return Book")
+                print("d. Go Back Selection")
 
-"Review: Widely acclaimed for its spiritual depth, reviewers note how it helps reduce anxiety by focusing on the present moment.\n"
+                option = input("Choose an option: ")
 
-"Preview: Tolle guides readers to detach from past regrets and future worries, emphasizing mindfulness and inner peace.\n\n"
-
-"4. Mindset: The New Psychology of Success by Carol S. Dweck\n"
-
-"Review: Readers appreciate its research-based insights into growth vs. fixed mindsets, especially in education and leadership.\n"
-
-"Preview: Dweck shows how adopting a growth mindset can unlock learning, resilience, and achievement in any area of life.\n\n"
-
-"5. The Subtle Art of Not Giving a F*ck by Mark Manson\n"
-
-"Review: Reviews highlight its blunt, humorous style that challenges traditional positivity-focused self-help.\n"
-
-"Preview: Manson argues that embracing limitations and choosing what truly matters leads to a more meaningful life."
-))
-    
-    if book == 1:
-        print("1. Atomic Habits by James Clear\n\n\n"
-
-"Review: Readers praise its practical strategies for building good habits and breaking bad ones.\n\n"
-
-"Preview: Clear explains how tiny changes compound into remarkable results, using real-life examples and science-backed methods.\n\n\n")
-        return f"" 
-
-print("Welcome To The Library\n")
+                if option == "a":
+                    kept = books.pop(choice)
+                    kept_books.append(kept)    
+                    print(f"You kept {kept}. It is no longer available in the library.")
+                    kb = input("Do you want to view your kept books? (y/n): ")
+                    if kb.lower() == 'y':
+                        print("Your kept books:")
+                        for book in kept_books:
+                            print(f"- {book}")
+                        print("\n")
+                    break  
+                elif option == "b":
+                    print(f"\nPreview of {books[choice]}:\n{previews[choice]}")
+                elif option == "c":
+                    returned = books.pop(choice)
+                    print(f"You returned {returned}. It is no longer available in the library.")
+                    break
+                elif option == "d":
+                    print("Going back to book selection...")
+                    break
+                else:
+                    print("Invalid option. Try again.")
+        else:
+            print("Invalid book number. Try again.")
 
 #Creation of Account
 def coa():
