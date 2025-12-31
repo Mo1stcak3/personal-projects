@@ -1,6 +1,6 @@
 #Library Project
 
-#space function
+#space function 
 def space():
     print("\n")
     return
@@ -34,7 +34,7 @@ def books():
         "67": "ADMIN MODE SIGMA MOMENT"
     }
 
-    kept_books = []
+    kept_books = [] 
     admin67 = "admin123"
 
     while True:
@@ -68,7 +68,7 @@ def books():
                         previews[new_id] = new_preview
                         print(f"Book '{new_title}' added to the library.")
                     elif admin_choice == "2":
-                        rem_id = input("Enter book ID to remove: \n        ")
+                        rem_id = input("Enter book ID to remove: \n")
                         if rem_id in books:
                             removed_title = books.pop(rem_id)
                             previews.pop(rem_id, None)
@@ -87,6 +87,7 @@ def books():
                         print("\nAll Books in Library: \n")
                         for key, value in sorted(books.items()):
                             print(f"{key}. {value}")
+                            space()
                     elif admin_choice == "5":
                         print("Exiting Admin Mode.")
                         break
@@ -101,7 +102,7 @@ def books():
                 print("r. Return a book")
                 km_choice = input("Choose a number to view, or 'r' to return: ")
 
-                if km_choice == "r":
+                if km_choice == "r": 
                     try:
                         return_index = int(input("Enter the number of the book to return: "))
                         if 1 <= return_index <= len(kept_books):
@@ -167,7 +168,7 @@ def coa():
     return clog, cpw
 #Account Library
 def login_process(clog, pw):
-    a = 0
+    a = 0 
     while a < 3:
         print("  LOGIN YOUR ACCOUNT  ")
         log = input("USERNAME: ")
@@ -187,3 +188,4 @@ def login_process(clog, pw):
 
 clog, cpw = coa()
 login_process(clog, cpw)
+
