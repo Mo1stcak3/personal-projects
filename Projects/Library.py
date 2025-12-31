@@ -10,7 +10,7 @@ def edmeyn():
         "1": "Add Book",
         "2": "Remove Book",
         "3": "Edit Review",
-        "4": "View All Books",
+        "4": "View All Books And Options",
         "5": "Exit Admin Mode"
     }
     return edmin
@@ -52,8 +52,10 @@ def books():
             break
         elif choice == "67":
             admin_pwd = input("Enter admin password: ")
+            space()
             if admin_pwd == admin67:
                 print("APAKA JANGAS ISA KA NG ADMIN NA MODE: SIGMA".center(50, "-"))
+                space()
                 while True:
                     for key, value in sorted(edmeyn().items()):
                         print(f"{key}. {value}")
@@ -63,26 +65,35 @@ def books():
                     if admin_choice == "1":
                         new_id = input("Enter new book ID: ")
                         new_title = input("Enter new book title: ")
-                        new_preview = input("Enter book preview: \n")
+                        new_preview = input("Enter book preview: ")
+                        space()
                         books[new_id] = new_title
                         previews[new_id] = new_preview
                         print(f"Book '{new_title}' added to the library.")
+                        space()
                     elif admin_choice == "2":
-                        rem_id = input("Enter book ID to remove: \n")
+                        rem_id = input("Enter book ID to remove: ")
+                        space()
                         if rem_id in books:
                             removed_title = books.pop(rem_id)
                             previews.pop(rem_id, None)
-                            print(f"Book '{removed_title}' removed from the library.\n")
+                            print(f"Book '{removed_title}' removed from the library.")
+                            space()
                         else:
-                            print("Book ID not found.\n")
+                            print("Book ID not found.")
+                            space()
                     elif admin_choice == "3":
-                        edit_id = input("Enter book ID to edit review: \n")
+                        edit_id = input("Enter book ID to edit review: ")
+                        space()
                         if edit_id in previews:
-                            new_review = input("Enter new review: \n")
+                            new_review = input("Enter new review: ")
+                            space()
                             previews[edit_id] = new_review
-                            print(f"Review for '{books[edit_id]}' updated.\n")
+                            print(f"Review for '{books[edit_id]}' updated.")
+                            space()
                         else:
-                            print("Book ID not found.\n")
+                            print("Book ID not found.")
+                            space()
                     elif admin_choice == "4":
                         print("\nAll Books in Library: \n")
                         for key, value in sorted(books.items()):
@@ -90,16 +101,20 @@ def books():
                             space()
                     elif admin_choice == "5":
                         print("Exiting Admin Mode.")
+                        space ()
                         break
                     else:
-                        print("Invalid option. Try again.\n")
+                        print("Invalid option. Try again.")
+                        space()
 
         elif choice == "k":
             if kept_books:
                 print("Your kept books:")
+                space()
                 for index, (book_id, book_title) in enumerate(kept_books, start=1):
                     print(f"{index}. {book_title}")
                 print("r. Return a book")
+                space()
                 km_choice = input("Choose a number to view, or 'r' to return: ")
 
                 if km_choice == "r": 
@@ -111,6 +126,7 @@ def books():
                             print(f"{book_title} RETURNED TO LIBRARY")
                         else:
                             print("Invalid book number.")
+                            space()
                     except ValueError:
                         print("Invalid input. Please enter a number.")
                 elif km_choice.isdigit():
@@ -118,20 +134,26 @@ def books():
                     if 1 <= num <= len(kept_books):
                         book_id, book_title = kept_books[num - 1]
                         print(f"\nPreview of {book_title}:\n{previews[book_id]}")
+                        space()
                     else:
-                        print("Invalid book number.")        
+                        print("Invalid book number.") 
+                        space()   
                 else:
                     print("Invalid option. Returning to main menu.")
+                    space()
             else:
                 print("You have no kept books.")
+                space()
         elif choice in books:
             print(f"\nYou selected: {books[choice]}")
+            space()
             while True:
                 print("\nOptions:")
                 print("a. Keep Book")
                 print("b. Preview and Review")
                 print("c. Return Book")
                 print("d. Go Back Selection")
+                space()
 
                 option = input("Choose an option: ")
 
@@ -139,26 +161,34 @@ def books():
                     kept = books.pop(choice)
                     kept_books.append((choice, kept)) 
                     print(f"You kept {kept}. It is no longer available in the library.")
+                    space()
                     break
                 elif option == "b":
+                    space()
                     print(f"\nPreview of {books[choice]}:\n{previews[choice]}")
+                    space()
                 elif option == "c":
                     for index, (book_id, book_name) in enumerate(kept_books):
                         if book_id == choice:
                             books[book_id] = book_name
                             kept_books.pop(index)
                             print(f"{book_name} RETURNED TO LIBRARY")
+                            space()
                             break
                     else:
                         print("You have not kept this book.")
+                        space()
                     break
                 elif option == "d":
                     print("Going back to book selection...")
+                    space()
                     break
                 else:
                     print("Invalid option. Try again.")
+                    space()
         else:
             print("Invalid book number. Try again.")
+            space()
 #Creation of Account
 def coa():
     print("  CREATE YOUR ACCOUNT TO CONTIUE!  ")
