@@ -61,14 +61,14 @@ def books():
                     admin_choice = input("Select an option: ")
                     space()
                     if admin_choice == "1":
-                        new_id = input("Enter new book ID: \n")
-                        new_title = input("Enter new book title: \n")
+                        new_id = input("Enter new book ID: ")
+                        new_title = input("Enter new book title: ")
                         new_preview = input("Enter book preview: \n")
                         books[new_id] = new_title
                         previews[new_id] = new_preview
-                        print(f"Book '{new_title}' added to the library.\n")
+                        print(f"Book '{new_title}' added to the library.")
                     elif admin_choice == "2":
-                        rem_id = input("Enter book ID to remove: \n")
+                        rem_id = input("Enter book ID to remove: \n        ")
                         if rem_id in books:
                             removed_title = books.pop(rem_id)
                             previews.pop(rem_id, None)
@@ -96,16 +96,29 @@ def books():
         elif choice == "k":
             if kept_books:
                 print("Your kept books:")
-                for idx, (book_id, book_title) in enumerate(kept_books, start=1):
-                    print(f"{idx}. {book_title}")
+                for index, (book_id, book_title) in enumerate(kept_books, start=1):
+                    print(f"{index}. {book_title}")
                 print("r. Return a book")
-                sc = input("Choose a number to view, or 'r' to return: ")
+                km_choice = input("Choose a number to view, or 'r' to return: ")
 
-                if sc == "r":
-                    r_idx = int(input("Enter the number of the book to return: "))
-                    book_id, book_title = kept_books.pop(r_idx - 1)
-                    books[book_id] = book_title
-                    print(f"{book_title} RETURNED TO LIBRARY") 
+                if km_choice == "r":
+                    try:
+                        return_index = int(input("Enter the number of the book to return: "))
+                        if 1 <= return_index <= len(kept_books):
+                            book_id, book_title = kept_books.pop(return_index - 1)
+                            books[book_id] = book_title
+                            print(f"{book_title} RETURNED TO LIBRARY")
+                        else:
+                            print("Invalid book number.")
+                    except ValueError:
+                        print("Invalid input. Please enter a number.")
+                elif km_choice.isdigit():
+                    num = int(km_choice)
+                    if 1 <= num <= len(kept_books):
+                        book_id, book_title = kept_books[num - 1]
+                        print(f"\nPreview of {book_title}:\n{previews[book_id]}")
+                    else:
+                        print("Invalid book number.")        
                 else:
                     print("Invalid option. Returning to main menu.")
             else:
@@ -129,11 +142,10 @@ def books():
                 elif option == "b":
                     print(f"\nPreview of {books[choice]}:\n{previews[choice]}")
                 elif option == "c":
-                    # look for the book in kept_books
-                    for idx, (book_id, book_name) in enumerate(kept_books):
+                    for index, (book_id, book_name) in enumerate(kept_books):
                         if book_id == choice:
                             books[book_id] = book_name
-                            kept_books.pop(idx)
+                            kept_books.pop(index)
                             print(f"{book_name} RETURNED TO LIBRARY")
                             break
                     else:
@@ -167,10 +179,10 @@ def login_process(clog, pw):
             books()
             return True
         else:
-            print("bulbul kaba?! hackerist yern?")
+            print("Incorrect Username or Password. Try Again.")
             a += 1
-
-    print("HECKER KABA???")
+    space()
+    print("Too many failed attempts. Exiting program.")
     return False
 
 clog, cpw = coa()
