@@ -1,102 +1,225 @@
+#Library Project
+
+#space function 
+
 def space():
     print("\n")
-    return
 
-def book_choices():
-    print("Welcome to the Library!\n")
-    print("Here are the Books Available! \n")
-    books = int(input(
-"1. Atomic Habits by James Clear\n"
+#ADMIN MODE AND USER FUNCTIONS AND DATA
 
-"2. The 7 Habits of Highly Effective People by Stephen R. Covey\n"
+def add_books(books, previews):
+    new_id = input("Enter new book ID: ")
+    new_title = input("Enter new book title: ")
+    new_preview = input("Enter book preview: ")
+    books[new_id] = new_title
+    previews[new_id] = new_preview
+    print(f"Book '{new_title}' added.")
 
-"3. The Power of Now by Eckhart Tolle\n"
+def remove_books(books, previews):
+    remove_id = input("Enter book ID to remove: ")
+    if remove_id in books:
+        removed_title = books.pop(remove_id)
+        previews.pop(remove_id, None)
+        print(f"Book '{removed_title}' removed.")
+    else:
+        print("Book ID not found.")
 
+def edit_review(previews):
+    edit_id = input("Enter book ID to edit review: ")
+    if edit_id in previews:
+        new_review = input("Enter new review: ")
+        previews[edit_id] = new_review
+        print(f"Review for book ID '{edit_id}' updated.")
+    else:
+        print("Book ID not found.")
 
-"4. Mindset: The New Psychology of Success by Carol S. Dweck\n"
+def keep_book(choice, books, kept_books):
+    kept = books.pop(choice)
+    kept_books.append((choice, kept))
+    print(f"You kept {kept}. It is no longer available.")
 
-
-"5. The Subtle Art of Not Giving a F*ck by Mark Manson\n"
-"Select A book: "
-
-
-))
+def return_book(choice, books, kept_books):
+    for index, (book_id, book_name) in enumerate(kept_books):
+        if book_id == choice:
+            books[book_id] = book_name
+            kept_books.pop(index)
+            print(f"{book_name} RETURNED TO LIBRARY")
+            return
+    print("You have not kept this book.")
     
-    if books == 1:
-        rvprv = print("Review: Readers praise its practical strategies for building good habits and breaking bad ones.\n\n"
+def return_book(choice, books, kept_books):
+    for index, (book_id, book_name) in enumerate(kept_books):
+        if book_id == choice:
+            books[book_id] = book_name
+            kept_books.pop(index)
+            print(f"{book_name} RETURNED TO LIBRARY")
+            return
+    print("You have not kept this book.")
 
-"Preview: Clear explains how tiny changes compound into remarkable results, using real-life examples and science-backed methods.\n\n\n")
+def preview_book(choice, books, previews):
+    print(f"\nPreview of {books[choice]}:\n{previews[choice]}")
 
-        print("1. Atomic Habits by James Clear\n")
+#ADMIN DATA FUNCTION
 
-        krpr_choice(rvprv)
-                
+def admin_data():
+    edmin = {
+        "1": "Add Book",
+        "2": "Remove Book",
+        "3": "Edit Review",
+        "4": "View All Books And Options",
+        "5": "Exit Admin Mode"
+    }
+    return edmin
 
-    elif books == 2:
-        rvprv = print("Review: Considered a timeless classic, reviewers highlight its focus on character ethics and long-term success.\n"
+#BOOKs FUNCTION
 
-    "Preview: Covey introduces habits like 'Be Proactive' and 'Begin with the End in Mind' to transform personal and professional effectiveness.\n\n"
-    )
-        print("2. The 7 Habits of Highly Effective People by Stephen R. Covey\n")
+def books():
+    return {
+        "1": "Atomic Habits by James Clear",
+        "2": "The 7 Habits of Highly Effective People by Stephen R. Covey",
+        "3": "The Power of Now by Eckhart Tolle",
+        "4": "Mindset: The New Psychology of Success by Carol S. Dweck",
+        "5": "The Subtle Art of Not Giving a F*ck by Mark Manson",
+        "67": "ADMIN MODE SIGMA MOMENT"
+    }
+def previews():
+    return {
+        "1": "Atomic Habits explains how small daily changes compound into remarkable results. Clear focuses on habit loops, identity-based change, and practical systems.",
+        "2": "Covey’s classic outlines seven timeless principles for effectiveness, from being proactive to sharpening the saw. It blends personal growth with leadership lessons.",
+        "3": "The Power of Now emphasizes living fully in the present moment, letting go of past regrets and future anxieties to achieve peace and awareness.",
+        "4": "Mindset explores fixed vs. growth mindsets, showing how beliefs about ability shape success in school, work, and relationships.",
+        "5": "Mark Manson delivers a blunt, humorous take on values and priorities, encouraging readers to focus only on what truly matters.",
+        "67": "ADMIN MODE SIGMA MOMENT"
+    }
 
-        krpr_choice(rvprv)
-
-    elif books == 3:
-        rvprv = print("Review: Widely acclaimed for its spiritual depth, reviewers note how it helps reduce anxiety by focusing on the present moment.\n"
-
-    "Preview: Tolle guides readers to detach from past regrets and future worries, emphasizing mindfulness and inner peace.\n\n")
-        print("3. The Power of Now by Eckhart Tolle\n")
-
-        krpr_choice(rvprv)
-                
-        
-    elif books == 4:
-        rvprv = print("Review: Readers appreciate its research-based insights into growth vs. fixed mindsets, especially in education and leadership.\n"
-        
-    "Preview: Dweck shows how adopting a growth mindset can unlock learning, resilience, and achievement in any area of life.\n\n"
-    )
-        print("4. Mindset: The New Psychology of Success by Carol S. Dweck\n")
-
-        krpr_choice(rvprv)
-                
-    elif books == 5:
-        rvprv = print("Review: Reviews highlight its blunt, humorous style that challenges traditional positivity-focused self-help.\n"
-
-    "Preview: Manson argues that embracing limitations and choosing what truly matters leads to a more meaningful life."
-    )
-        print("5. The Subtle Art of Not Giving a F*ck by Mark Manson\n")
-
-        krpr_choice(rvprv)
-
-#Initial Choices
-def Ini_Choc():
+def menu():
+    books = books()
+    previews = previews()
+    kept_books = []   
+    
     while True:
-        ad_user = input("Type A for Admin Log in and type U for User Log in.\n")
-        if ad_user == "A":
-            admin_acc()
-        elif ad_user == "U":
-            coa()
-#Admin Default Account
-def admin_acc():
-    a = 0
-    while a < 3:
-        print("  LOGIN YOUR ADMIN ACCOUNT  ")
-        log = input("USERNAME: ")
-        pw = input("PASSWORD: ")
-        space()
+        print("\nWelcome To The Library\n")
+        print("Available Books:")
+        for key, value in sorted(books.items()):
+            print(f"{key}. {value}")
+        print("k. View Kept Books")
+        print("q. Quit")
 
-        if log.lower() == "admin" and pw == "admin1234":
-            print("Success Log in")
-            book_choices()
-            return True
+        choice = input("\nSelect a book number: ")
+
+        if choice == "q":
+            print("Exiting Library. Goodbye!")
+            break
+        elif choice == "67":
+            admin_options = admin_data()
+            while True:
+                print("\nADMIN MODE")
+                for key, value in admin_options.items():
+                    print(f"{key}. {value}")
+                admin_choice = input("Select an option: ")
+
+                if admin_choice == "1":
+                    add_books(books, previews)
+                elif admin_choice == "2":
+                    remove_books(books, previews)
+                elif admin_choice == "3":
+                    edit_review(previews)
+                elif admin_choice == "4":
+                    print("\nAll Books and Options:")
+                    for key, value in sorted(books.items()):
+                        print(f"{key}. {value}")
+                    space()
+                elif admin_choice == "5":
+                    print("Exiting Admin Mode.")
+                    space()
+                    break
+                else:
+                    print("Invalid option. Try again.")
+                    space()
+            
+
+        elif choice == "k":
+            if kept_books:
+                print("Your kept books:")
+                space()
+                for index, (book_id, book_title) in enumerate(kept_books, start=1):
+                    print(f"{index}. {book_title}")
+                print("r. Return a book")
+                space()
+                km_choice = input("Choose a number to view, or 'r' to return: ")
+
+                if km_choice == "r": 
+                    try:
+                        return_index = int(input("Enter the number of the book to return: "))
+                        if 1 <= return_index <= len(kept_books):
+                            book_id, book_title = kept_books.pop(return_index - 1)
+                            books[book_id] = book_title
+                            print(f"{book_title} RETURNED TO LIBRARY")
+                        else:
+                            print("Invalid book number.")
+                            space()
+                    except ValueError:
+                        print("Invalid input. Please enter a number.")
+                elif km_choice.isdigit():
+                    num = int(km_choice)
+                    if 1 <= num <= len(kept_books):
+                        book_id, book_title = kept_books[num - 1]
+                        print(f"\nPreview of {book_title}:\n{previews[book_id]}")
+                        space()
+                    else:
+                        print("Invalid book number.") 
+                        space()   
+                else:
+                    print("Invalid option. Returning to main menu.")
+                    space()
+            else:
+                print("You have no kept books.")
+                space()
+        elif choice in books:
+            print(f"\nYou selected: {books[choice]}")
+            space()
+            while True:
+                print("\nOptions:")
+                print("a. Keep Book")
+                print("b. Preview and Review")
+                print("c. Return Book")
+                print("d. Go Back Selection")
+                space()
+
+                option = input("Choose an option: ")
+
+                if option == "a":
+                    kept = books.pop(choice)
+                    kept_books.append((choice, kept)) 
+                    print(f"You kept {kept}. It is no longer available in the library.")
+                    space()
+                    break
+                elif option == "b":
+                    space()
+                    print(f"\nPreview of {books[choice]}:\n{previews[choice]}")
+                    space()
+                elif option == "c":
+                    for index, (book_id, book_name) in enumerate(kept_books):
+                        if book_id == choice:
+                            books[book_id] = book_name
+                            kept_books.pop(index)
+                            print(f"{book_name} RETURNED TO LIBRARY")
+                            space()
+                            break
+                    else:
+                        print("You have not kept this book.")
+                        space()
+                    break
+                elif option == "d":
+                    print("Going back to book selection...")
+                    space()
+                    break
+                else:
+                    print("Invalid option. Try again.")
+                    space()
         else:
-            print(f"bulbul kaba?! hackerist yern? O may {2-a} kapa.")
-            a += 1
-
-        print("HECKER KABA???")
-        return False
-
-
+            print("Invalid book number. Try again.")
+            space()
 #Creation of Account
 def coa():
     print("  CREATE YOUR ACCOUNT TO CONTIUE!  ")
@@ -104,10 +227,9 @@ def coa():
     cpw = input("Password: ")
     space()
     return clog, cpw
-
 #Account Library
 def login_process(clog, pw):
-    a = 0
+    a = 0 
     while a < 3:
         print("  LOGIN YOUR ACCOUNT  ")
         log = input("USERNAME: ")
@@ -116,174 +238,14 @@ def login_process(clog, pw):
 
         if log.lower() == clog.lower() and pw == cpw:
             print("Success Log in")
-            book_choices()
+            books()
             return True
         else:
-            print(f"bulbul kaba?! hackerist yern? O may {2-a} kapa.")
+            print("Incorrect Username or Password. Try Again.")
             a += 1
-
-    print("HECKER KABA???")
-    return False
-
-#Keep, Review and Preview, Return
-def krpr_choice(rvprv):
-    while True:
-            kprr = input("a. Keep Book\nb. Preview and Review\nc. Return Book\nd. Go Back Selection\nSelect an Action: ")
-            if kprr == 'a':
-                print("blank")
-            elif kprr == 'b':
-                print(rvprv)
-            elif kprr == 'c':
-                print("blank")
-            elif kprr == 'd':
-                book_choices()    
-            else: 
-                print("Invalid Choice")
-
-clog, cpw = coa()
-login_process(clog, cpw)
-rvprv = book_choices()
-def space():
-    print("\n")
-    return
-
-def book_choices():
-    print("Welcome to the Library!\n")
-    books = int(input(
-"1. Atomic Habits by James Clear\n"
-
-"2. The 7 Habits of Highly Effective People by Stephen R. Covey\n"
-
-"3. The Power of Now by Eckhart Tolle\n"
-
-
-"4. Mindset: The New Psychology of Success by Carol S. Dweck\n"
-
-
-"5. The Subtle Art of Not Giving a F*ck by Mark Manson\n"
-"Select A book: "
-
-
-))
-    
-    if books == 1:
-        rvprv = print("Review: Readers praise its practical strategies for building good habits and breaking bad ones.\n\n"
-
-"Preview: Clear explains how tiny changes compound into remarkable results, using real-life examples and science-backed methods.\n\n\n")
-
-        print("1. Atomic Habits by James Clear\n")
-
-        krpr_choice(rvprv)
-                
-
-    elif books == 2:
-        rvprv = print("Review: Considered a timeless classic, reviewers highlight its focus on character ethics and long-term success.\n"
-
-    "Preview: Covey introduces habits like 'Be Proactive' and 'Begin with the End in Mind' to transform personal and professional effectiveness.\n\n"
-    )
-        print("2. The 7 Habits of Highly Effective People by Stephen R. Covey\n")
-
-        krpr_choice(rvprv)
-
-    elif books == 3:
-        rvprv = print("Review: Widely acclaimed for its spiritual depth, reviewers note how it helps reduce anxiety by focusing on the present moment.\n"
-
-    "Preview: Tolle guides readers to detach from past regrets and future worries, emphasizing mindfulness and inner peace.\n\n")
-        print("3. The Power of Now by Eckhart Tolle\n")
-
-        krpr_choice(rvprv)
-                
-        
-    elif books == 4:
-        rvprv = print("Review: Readers appreciate its research-based insights into growth vs. fixed mindsets, especially in education and leadership.\n"
-        
-    "Preview: Dweck shows how adopting a growth mindset can unlock learning, resilience, and achievement in any area of life.\n\n"
-    )
-        print("4. Mindset: The New Psychology of Success by Carol S. Dweck\n")
-
-        krpr_choice(rvprv)
-                
-    elif books == 5:
-        rvprv = print("Review: Reviews highlight its blunt, humorous style that challenges traditional positivity-focused self-help.\n"
-
-    "Preview: Manson argues that embracing limitations and choosing what truly matters leads to a more meaningful life."
-    )
-        print("5. The Subtle Art of Not Giving a F*ck by Mark Manson\n")
-
-        krpr_choice(rvprv)
-
-#Initial Choices
-def Ini_Choc():
-    while True:
-        ad_user = input("Type A for Admin Log in and type U for User Log in.\n")
-        if ad_user == "A":
-            admin_acc()
-        elif ad_user == "U":
-            coa()
-#Admin Default Account
-def admin_acc():
-    a = 0
-    while a < 3:
-        print("  LOGIN YOUR ADMIN ACCOUNT  ")
-        log = input("USERNAME: ")
-        pw = input("PASSWORD: ")
-        space()
-
-        if log.lower() == "admin" and pw == "admin1234":
-            print("Success Log in")
-            book_choices()
-            return True
-        else:
-            print(f"bulbul kaba?! hackerist yern? O may {2-a} kapa.")
-            a += 1
-
-        print("HECKER KABA???")
-        return False
-
-
-#Creation of Account
-def coa():
-    print("  CREATE YOUR ACCOUNT TO CONTIUE!  ")
-    clog = input("Username: ")
-    cpw = input("Password: ")
     space()
-    return clog, cpw
-
-#Account Library
-def login_process(clog, pw):
-    a = 0
-    while a < 3:
-        print("  LOGIN YOUR ACCOUNT  ")
-        log = input("USERNAME: ")
-        pw = input("PASSWORD: ")
-        space()
-
-        if log.lower() == clog.lower() and pw == cpw:
-            print("Success Log in")
-            book_choices()
-            return True
-        else:
-            print(f"bulbul kaba?! hackerist yern? O may {2-a} kapa.")
-            a += 1
-
-    print("HECKER KABA???")
+    print("Too many failed attempts. Exiting program.")
     return False
 
-#Keep, Review and Preview, Return
-def krpr_choice(rvprv):
-    while True:
-            kprr = input("a. Keep Book\nb. Preview and Review\nc. Return Book\nd. Go Back Selection\nSelect an Action: ")
-            if kprr == 'a':
-                print("blank")
-            elif kprr == 'b':
-                print(rvprv)
-            elif kprr == 'c':
-                print("blank")
-            elif kprr == 'd':
-                book_choices()    
-            else: 
-                print("Invalid Choice")
-
 clog, cpw = coa()
-login_process(clog, cpw)
-rvprv = book_choices()
+login_process(clog, cpw) 
