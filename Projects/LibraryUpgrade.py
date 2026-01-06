@@ -60,9 +60,9 @@ def edm_pow():
         if bck != "":
             return
 
-
+#Admin Menu/Control
 def admin_menu():
-    print("APAKA JANGAS ISA KA NG ADMIN NA MODE: SIGMA".center(50, "-"))
+    print("Admin Control".center(20, "-"))
     space()
     while True:
         for key, value in sorted(edmeyn().items()):
@@ -73,29 +73,32 @@ def admin_menu():
         space()
 
         if admin_choice == "1":  # add books
-            global book_id
+            book_id = int(input("Enter Book ID: "))
+            
             books[book_id] = {
                 "title": input("Enter new book title: "),
                 "author": input("Enter new book author: "),
                 "preview": input("Enter book preview: ")
             }
             print(f"Book '{books[book_id]['title']}' added to the library.")
-            book_id += 1
+            
 
-        elif admin_choice == "2":
+        elif admin_choice == "2": #remove books
             print("Current Books in Library: ")
             for key, value in sorted(books.items()):
-                print(f"{key}. {value['title']} by {value['author']}\n")
+                print(f"{key}. {value['title']} by {value['author']}")
 
             rem_id = input("Enter book ID to remove book: ")
 
             if rem_id in books:
-                removed_title = books.pop(rem_id)
-                print(f"Book '{removed_title}' removed from the library.")
+                removed_book = books.pop(rem_id)
+                print(f"Book '{removed_book['title']}' by {removed_book['author']} removed from the library.")
+            elif rem_id != "":
+                return
             else:
                 print("Book ID not found.")
                 space()
-
+                    
         elif admin_choice == "3":  # edit books
             edit_id = input("Enter book ID to edit book:")
 
@@ -130,7 +133,7 @@ def admin_menu():
             space()
 
 
-book_id = len(books) + 1
+
 
 
 def Library():
@@ -228,6 +231,7 @@ def Library():
                         if book_id == choice:
                             books[book_id] = book_name
                             kept_books.pop(index)
+                            
                             print(f"{book_name} RETURNED TO LIBRARY")
                             space()
                             break
