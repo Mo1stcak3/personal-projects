@@ -190,14 +190,31 @@ def books():
             print("Invalid book number. Try again.")
             space()
 #Creation of Account
+
 def coa():
-    print("  CREATE YOUR ACCOUNT TO CONTIUE!  ")
-    clog = input("Username: ")
-    cpw = input("Password: ")
-    space()
-    return clog, cpw
+    
+    while True:
+        print("  CREATE YOUR ACCOUNT TO CONTIUE!  ")
+        clog = input("Username: ")
+        cpw = input("Password: ")
+        pwc = input ("Confirm Password: ")
+        space()
+        
+        
+        if cpw != pwc:
+            print ("ERROR! Please TRY AGAIN.")
+            space()
+        elif len(cpw) < 5:
+            print("Your Password Must Have 5 Minimum AlphaNumeric Characters\n (Can be Soley Numeric/Alphabetical)")
+    
+        else:
+            break
+        space()
+        
 #Account Library
+
 def login_process(clog, pw):
+    
     a = 0 
     while a < 3:
         print("  LOGIN YOUR ACCOUNT  ")
