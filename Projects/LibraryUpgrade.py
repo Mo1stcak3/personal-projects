@@ -3,8 +3,7 @@
 # space function
 def space():
     print("\n")
-    return
-
+    
 
 users = {}
 
