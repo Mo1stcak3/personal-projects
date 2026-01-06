@@ -73,8 +73,8 @@ def admin_menu():
         space()
 
         if admin_choice == "1":  # add books
-            book_id = int(input("Enter Book ID: "))
             
+            book_id = input("Enter Book ID: ")
             books[book_id] = {
                 "title": input("Enter new book title: "),
                 "author": input("Enter new book author: "),
