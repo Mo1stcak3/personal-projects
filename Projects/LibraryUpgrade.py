@@ -70,7 +70,6 @@ def admin_menu():
             space()
 
         admin_choice = input("Select an option: ")
-        space()
 
         if admin_choice == "1":  # add books
             
@@ -87,12 +86,15 @@ def admin_menu():
             print("Current Books in Library: ")
             for key, value in sorted(books.items()):
                 print(f"{key}. {value['title']} by {value['author']}")
+                space()
 
             rem_id = input("Enter book ID to remove book: ")
 
             if rem_id in books:
                 removed_book = books.pop(rem_id)
+                space()
                 print(f"Book '{removed_book['title']}' by {removed_book['author']} removed from the library.")
+                space()
             elif rem_id != "":
                 return
             else:
@@ -133,10 +135,7 @@ def admin_menu():
             space()
 
 
-
-
-
-def Library():
+def Library(): # The library
     kept_books = []
 
     while True:
