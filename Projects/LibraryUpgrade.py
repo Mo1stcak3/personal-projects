@@ -3,7 +3,20 @@
 # space function
 def space():
     print("\n")
-    
+
+def welcome_user(user):
+    banner = r"""
+ __        __   _                            
+ \ \      / /__| | ___ ___  _ __ ___   ___   
+  \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \  
+   \ V  V /  __/ | (_| (_) | | | | | |  __/  
+    \_/\_/ \___|_|\___\___/|_| |_| |_|\___|  
+                                             
+                    WELCOME {user}
+    """
+    # Replace {user} with the actual name
+    print(banner.format(user=user))
+
 
 users = {}
 
@@ -37,19 +50,19 @@ books = {
 }
 
 # ADMIN MODE FUNCTION
-def edmeyn():
-    edmin = {
+def admins():
+    adm = {
         "1": "Add Book",
         "2": "Remove Book",
         "3": "Edit Review",
         "4": "View All Books And Options",
         "5": "Exit Admin Mode"
     }
-    return edmin
+    return adm
 
 
 # ADMIN PAAAWEEER!!
-def edm_pow():
+def adm_pow():
     admin_pwd = input("Enter admin password: ")
     space()
     if admin_pwd == "admin67":
@@ -61,27 +74,31 @@ def edm_pow():
 
 #Admin Menu/Control
 def admin_menu():
-    print("Admin Control".center(20, "-"))
+    print("Admin Control".center(50, "-"))
     space()
     while True:
-        for key, value in sorted(edmeyn().items()):
+        for key, value in sorted(admins().items()):
             print(f"{key}. {value}")
             space()
 
         admin_choice = input("Select an option: ")
 
-        if admin_choice == "1":  # add books
-            
+        if admin_choice == "1":
             book_id = input("Enter Book ID: ")
-            books[book_id] = {
+
+            if book_id in books:
+                print("Book ID already exists.")
+            else:  
+                books[book_id] = {
                 "title": input("Enter new book title: "),
                 "author": input("Enter new book author: "),
                 "preview": input("Enter book preview: ")
             }
+            space()
             print(f"Book '{books[book_id]['title']}' added to the library.")
             
 
-        elif admin_choice == "2": #remove books
+        elif admin_choice == "2":
             print("Current Books in Library: ")
             for key, value in sorted(books.items()):
                 print(f"{key}. {value['title']} by {value['author']}")
@@ -100,7 +117,7 @@ def admin_menu():
                 print("Book ID not found.")
                 space()
                     
-        elif admin_choice == "3":  # edit books
+        elif admin_choice == "3":
             edit_id = input("Enter book ID to edit book:")
 
             if edit_id in books:
@@ -117,7 +134,7 @@ def admin_menu():
             else:
                 print("Book ID not found.")
 
-        elif admin_choice == "4":  # view all books
+        elif admin_choice == "4":
             print("\nAll Books in Library: \n")
             for key, value in sorted(books.items()):
                 print(f"{key}. {value['title']} by {value['author']}\n{value['preview']}")
@@ -134,11 +151,11 @@ def admin_menu():
             space()
 
 
-def Library(): # The library
+def Library(user):
     kept_books = []
 
     while True:
-        print("\nWelcome To The Library\n")
+        welcome_user(user)
         print("Available Books:")
         for key, value in sorted(books.items()):
             print(f"{key}. {value['title']} by {value['author']}")
@@ -155,26 +172,28 @@ def Library(): # The library
             break
 
         elif choice == "b":
-            edm_pow()
+            adm_pow()
 
         elif choice == "a":
             if kept_books:
                 print("Your kept books:")
                 space()
-                for index, (book_id, book_title) in enumerate(kept_books, start=1):
-                    print(f"{index}. {book_title}")
+                for index, (book_id, book_data) in enumerate(kept_books, start=1):
+                    print(f"{index}. {book_data['title']} by {book_data['author']}")
 
                 print("r. Return a book")
                 space()
                 km_choice = input("Choose a number to view, or 'r' to return: ")
+                space()
 
                 if km_choice == "r":
                     try:
                         return_index = int(input("Enter the number of the book to return: "))
                         if 1 <= return_index <= len(kept_books):
-                            book_id, book_title = kept_books.pop(return_index - 1)
-                            books[book_id] = book_title
-                            print(f"{book_title} RETURNED TO LIBRARY")
+                            book_id, book_data = kept_books.pop(return_index - 1)
+                            books[book_id] = book_data
+                            print(f"{book_data['title']} by {book_data['author']} RETURNED TO LIBRARY")
+                            space()
                         else:
                             print("Invalid book number.")
                             space()
@@ -271,7 +290,7 @@ def coa():
 
         users[username] = {"password": password, "borrowed": []}
         print(f"User '{username}' created successfully.")
-        break
+        return
 
 
 # Account Library
@@ -285,7 +304,7 @@ def login_process():
 
         if username in users and users[username]["password"] == password:
             print("Success Log in")
-            Library()
+            Library(user=username)
             return True
         else:
             print("Incorrect Username or Password. Try Again.")
@@ -297,7 +316,7 @@ def login_process():
 # Login Menu
 def log_men():
     while True:
-        print("  WELCOME TO THE LIBRARY SYSTEM  ")
+        print("Welcome to the Library".center(50, "-"))
         space()
         print("1. Create Account")
         print("2. Login")
@@ -312,7 +331,7 @@ def log_men():
             if login_process():
                 break
         elif choice == "3":
-            edm_pow()
+            adm_pow()
         elif choice == "4":
             print("Exiting program. Goodbye!")
             break
