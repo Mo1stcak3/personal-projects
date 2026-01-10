@@ -203,8 +203,8 @@ def Library(user):
                 elif km_choice.isdigit():
                     num = int(km_choice)
                     if 1 <= num <= len(kept_books):
-                        book_id, book_title = kept_books[num - 1]
-                        print(f"\nPreview of {book_title}:\n{books[book_id]['preview']}")
+                        book_data, book_data = kept_books[num - 1]
+                        print(f"\nPreview of {book_data['title']}:\n{book_data['preview']}")
                         space()
                     else:
                         print("Invalid book number.")
