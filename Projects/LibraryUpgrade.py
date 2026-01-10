@@ -309,6 +309,7 @@ def login_process():
         else:
             print("Incorrect Username or Password. Try Again.")
             a += 1
+        if a == 3:
             input("Too many failed attempts. Press enter to continue")
             log_men()
 
