@@ -234,7 +234,7 @@ def Library(user):
                 if option == "a":
                     kept = books.pop(choice)
                     kept_books.append((choice, kept))
-                    print(f"You kept {kept}. It is no longer available in the library.")
+                    print(f"You kept {kept['title']} by {kept['author']}. It is no longer available in the library.")
                     space()
                     break
 
