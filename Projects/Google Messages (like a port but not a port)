@@ -1,0 +1,28 @@
+import webview
+import sys, os, json
+
+
+user_data_path = os.path.join(os.getenv("APPDATA"), "GoogleMessagesPC")
+os.makedirs(user_data_path, exist_ok=True)
+memory_path = os.path.join(user_data_path, "memory.json")
+
+
+if os.path.exists(memory_path):
+    with open(memory_path, "r") as f:
+        memory = json.load(f)
+else:
+    memory = {"launch_count": 0}
+
+
+memory["launch_count"] += 1
+
+
+with open(memory_path, "w") as f:
+    json.dump(memory, f)
+
+
+print(f"App launched {memory['launch_count']} times.")
+
+
+webview.create_window("Google Messages", "https://messages.google.com/web")
+webview.start()
