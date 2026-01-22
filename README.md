@@ -1,2 +1,2 @@
 # personal-projects
-learning thingies
+learning things
