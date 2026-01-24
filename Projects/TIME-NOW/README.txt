@@ -1,44 +1,83 @@
-# TIME-NOW: Meme Edition ⏰🐱
+TIME-NOW: Meme Edition ⏰🐱
 
-A real-time clock widget deployed on a custom domain via Cloudflare — with a playful twist.
+A real-time clock website deployed on a custom domain via Cloudflare — with a playful, meme-powered twist.
 
-## 🔥 Features
-- Live time and date display (Philippines timezone)
-- Background: Maxwell the spinning cat (because why not?)
-- Background music: Kirby-themed track for cozy vibes
-- Autoplay audio integration with browser compatibility fixes
-- Hosted on a custom domain using Cloudflare DNS + SSL
+🔥 Features
 
-## 🛠 Tech Stack
-- HTML5 + JavaScript
-- Cloudflare Pages + Custom Domain
-- Audio autoplay workaround for modern browsers
+Live time and date display with timezone-specific widget (default: Asia/Manila)
 
-## 🚀 Live Demo
-Check it out here: [https://yourdomain.com](https://nutterbutters.uk)
+Maxwell the spinning cat as animated background for humor and creativity
 
-## 🤓 What I Learned
-- How to integrate multimedia (audio + visuals) into a web project
-- Browser autoplay restrictions and how to work around them
-- Deploying a live site with custom DNS and SSL via Cloudflare
-- Balancing technical functionality with creative expression
+Kirby-themed background music integrated via HTML5 <audio> with autoplay and loop
 
-## 📸 Screenshot
-!https://image2url.com/r2/default/gifs/1769244040299-9b4e8655-be47-4d5b-aa4d-33042b39c9b6.gif
+Autoplay compatibility fixes for modern browsers (Chrome, Firefox, mobile)
 
-## 💬 Reflection
-This project started as a simple time.now widget — but I wanted to make it memorable.
-So I added Maxwell the spinning cat as the background and layered in Kirby music for a cozy, meme-y vibe.
-It’s a fun way to show I can build and deploy real projects while keeping things lighthearted.
----
+Custom domain hosting via Cloudflare Pages with DNS and SSL setup
 
-## 🌍 Customizing Timezone
+Responsive design for desktop and mobile viewing
 
-This widget currently displays time in the Philippines (Asia/Manila).  
-If you'd like to adapt it to your own timezone, you can use the same API widget with your preferred location.
+Minimalist project structure: index.html, audio-script.js, and AUDIO.mp3
 
-**API Source**: https://time.now/widget/digital-clock/
+GIF preview embedded in README for instant demo
 
-Just replace the embed code or script with your desired timezone from the widget generator.
+Timezone customization via external widget API
 
-> “Functional, deployed, and fun — this is how I learn and build in public.”
+Clean documentation with setup instructions and reflection
+
+🛠 Tech Stack
+
+HTML5 + JavaScript
+
+Cloudflare Pages + Custom Domain
+
+Audio autoplay workaround using JS event listeners
+
+Time widget sourced from time.now
+
+🚀 Live Demo
+
+Visit the site: https://nutterbutters.uk
+
+📸 Preview
+
+
+
+🧪 Run Locally
+
+Clone the repo:
+
+git clone https://github.com/your-username/time-now-meme.git
+
+Open index.html in your browser.
+
+Ensure AUDIO.mp3 is in the root or assets/ folder.
+
+🌍 Customizing Timezone
+
+This widget currently displays time in the Philippines (Asia/Manila). To change it to your own timezone:
+
+Visit the time.now widget generator
+
+Select your preferred location
+
+Replace the embed code or script in index.html
+
+🤓 What I Learned
+
+Integrating multimedia (audio + visuals) into a web project
+
+Handling browser autoplay restrictions and workarounds
+
+Deploying a live site with custom DNS and SSL via Cloudflare
+
+Balancing technical functionality with creative expression
+
+Optimizing GIF previews for GitHub README
+
+Documenting projects for recruiter and collaborator visibility
+
+💬 Reflection
+
+This project started as a simple time.now widget — but I wanted to make it memorable. So I added Maxwell the spinning cat as the background and layered in Kirby music for a cozy, meme-y vibe. It’s a fun way to show I can build and deploy real projects while keeping things lighthearted.
+
+“Functional, deployed, and fun — this is how I learn and build in public.”
