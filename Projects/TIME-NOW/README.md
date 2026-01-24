@@ -34,6 +34,9 @@
 ## 📸 Preview
 
 ![TIME-NOW Demo](Projects/TIME-NOW/preview.gif)
+<p align="center">
+  <img src="preview.gif" alt="TIME-NOW Demo" width="600"/>
+</p>
 
 ---
 
