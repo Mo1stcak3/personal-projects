@@ -1,83 +1,65 @@
-TIME-NOW: Meme Edition ⏰🐱
+TIME-NOW: Meme Edition 👑🐱🎵A real-time clock website deployed on a custom domain via Cloudflare — but with a cute, meme-powered punch! Get your time, your vibes, and your smiles all in one place.✨ Features
 
-A real-time clock website deployed on a custom domain via Cloudflare — with a playful, meme-powered twist.
+🕒 Live time and date display with timezone-specific widget (default: Asia/Manila)
 
-🔥 Features
+🐈 Maxwell the spinning cat as your adorable, hypnotic background buddy
 
-Live time and date display with timezone-specific widget (default: Asia/Manila)
+🎶 Kirby-themed background music that loops and plays automatically (because why not?)
 
-Maxwell the spinning cat as animated background for humor and creativity
+🔧 Autoplay fixes for Chrome, Firefox, and mobile browsers (no silent vibes here)
 
-Kirby-themed background music integrated via HTML5 <audio> with autoplay and loop
+🌐 Hosted on Cloudflare Pages with custom domain, DNS, and SSL magic
 
-Autoplay compatibility fixes for modern browsers (Chrome, Firefox, mobile)
+📱 Fully responsive for desktop and mobile — cute on every screen!
 
-Custom domain hosting via Cloudflare Pages with DNS and SSL setup
+🗂️ Minimalist project files: index.html, audio-script.js, and AUDIO.mp3
 
-Responsive design for desktop and mobile viewing
+🎥 GIF preview embedded in README for instant fun demo
 
-Minimalist project structure: index.html, audio-script.js, and AUDIO.mp3
+🌍 Timezone customization via external widget API
 
-GIF preview embedded in README for instant demo
+📚 Clean, clear docs with setup tips and personal reflection
 
-Timezone customization via external widget API
+🛠️ Tech Stack
 
-Clean documentation with setup instructions and reflection
+HTML5 + JavaScript (the dynamic duo)
 
-🛠 Tech Stack
+Cloudflare Pages + Custom Domain (speed and style)
 
-HTML5 + JavaScript
+JS event listeners to beat autoplay restrictions
 
-Cloudflare Pages + Custom Domain
+Time widget powered by time.now (because time waits for no one)
 
-Audio autoplay workaround using JS event listeners
+🚀 Live DemoCheck it out here: https://nutterbutters.uk — your new favorite clock with a twist!🏃 Run Locally
 
-Time widget sourced from time.now
-
-🚀 Live Demo
-
-Visit the site: https://nutterbutters.uk
-
-📸 Preview
-
-
-
-🧪 Run Locally
-
-Clone the repo:
-
-git clone https://github.com/your-username/time-now-meme.git
+Clone the repo:git clone https://github.com/your-username/time-now-meme.git
 
 Open index.html in your browser.
 
-Ensure AUDIO.mp3 is in the root or assets/ folder.
+Make sure AUDIO.mp3 is in the root or assets/ folder.
 
-🌍 Customizing Timezone
-
-This widget currently displays time in the Philippines (Asia/Manila). To change it to your own timezone:
+🌏 Customize Your TimezoneWant your own timezone? Easy peasy:
 
 Visit the time.now widget generator
 
-Select your preferred location
+Pick your timezone
 
-Replace the embed code or script in index.html
+Swap out the embed code in index.html
 
-🤓 What I Learned
+📚 What I Learned
 
-Integrating multimedia (audio + visuals) into a web project
+How to blend multimedia (audio + visuals) into a web project with style
 
-Handling browser autoplay restrictions and workarounds
+Tackling browser autoplay quirks like a champ
 
 Deploying a live site with custom DNS and SSL via Cloudflare
 
-Balancing technical functionality with creative expression
+Balancing tech skills with meme-worthy creativity
 
-Optimizing GIF previews for GitHub README
+Optimizing GIF previews for GitHub README magic
 
-Documenting projects for recruiter and collaborator visibility
+Writing docs that recruiters and collaborators actually want to read
 
-💬 Reflection
+💭 ReflectionStarted as a simple time widget, but I wanted it to be more than just functional — it had to be fun, cute, and memorable. Maxwell the spinning cat and Kirby tunes bring the cozy vibes, making this project a playful flex of my skills.
 
-This project started as a simple time.now widget — but I wanted to make it memorable. So I added Maxwell the spinning cat as the background and layered in Kirby music for a cozy, meme-y vibe. It’s a fun way to show I can build and deploy real projects while keeping things lighthearted.
-
-“Functional, deployed, and fun — this is how I learn and build in public.”
+“Functional, deployed, and fun — that’s how I roll when I build in public.”
