@@ -33,7 +33,7 @@
 
 ## 📸 Preview
 
-![TIME-NOW Demo](https://image2url.com/r2/default/gifs/1769244040299-9b4e8655-be47-4d5b-aa4d-33042b39c9b6.gif)
+![TIME-NOW Demo](assets/preview.gif)
 
 ---
 
