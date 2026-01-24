@@ -33,7 +33,7 @@
 
 ## 📸 Preview
 
-![TIME-NOW Demo](TIME-NOW/preview.gif)
+![TIME-NOW Demo](Projects/TIME-NOW/preview.gif)
 
 ---
 
