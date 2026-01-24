@@ -1,65 +1,80 @@
-TIME-NOW: Meme Edition 👑🐱🎵A real-time clock website deployed on a custom domain via Cloudflare — but with a cute, meme-powered punch! Get your time, your vibes, and your smiles all in one place.✨ Features
+# ⏰🐱 TIME-NOW: Meme Edition 
+> A real-time, vibe-infused clock website. Deployed via Cloudflare for maximum performance and minimum boredom.
 
-🕒 Live time and date display with timezone-specific widget (default: Asia/Manila)
+[![Site Status](https://img.shields.io/website?url=https%3A%2F%2Fnutterbutters.uk&label=nutterbutters.uk&style=flat-square&color=blueviolet)](https://nutterbutters.uk)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-🐈 Maxwell the spinning cat as your adorable, hypnotic background buddy
+## 🚀 Live Demo
+**Experience the vibe:** [nutterbutters.uk](https://nutterbutters.uk)
 
-🎶 Kirby-themed background music that loops and plays automatically (because why not?)
+---
 
-🔧 Autoplay fixes for Chrome, Firefox, and mobile browsers (no silent vibes here)
+## 🔥 Features
 
-🌐 Hosted on Cloudflare Pages with custom domain, DNS, and SSL magic
+* **Live Time Sync:** Real-time clock and date widget (Default: `Asia/Manila`).
+* **Meme-Powered UI:** Features **Maxwell the Spinning Cat** for a high-quality aesthetic.
+* **Kirby Soundscape:** Integrated HTML5 audio with an autoplay workaround for a cozy atmosphere.
+* **Modern Deployment:** Custom domain hosting via **Cloudflare Pages** with automated SSL and edge caching.
+* **Responsive Design:** Fully optimized for both desktop browsers and mobile devices.
+* **Minimalist Codebase:** Lightweight structure for lightning-fast load times.
 
-📱 Fully responsive for desktop and mobile — cute on every screen!
+---
 
-🗂️ Minimalist project files: index.html, audio-script.js, and AUDIO.mp3
+## 🛠 Tech Stack
 
-🎥 GIF preview embedded in README for instant fun demo
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | HTML5, CSS3, JavaScript (ES6+) |
+| **Deployment** | Cloudflare Pages |
+| **Domain & Security** | Cloudflare DNS + Universal SSL |
+| **Assets** | Custom MP3 + Maxwell GIF |
 
-🌍 Timezone customization via external widget API
+---
 
-📚 Clean, clear docs with setup tips and personal reflection
+## 📸 Preview
 
-🛠️ Tech Stack
+![TIME-NOW Demo](https://image2url.com/r2/default/gifs/1769244040299-9b4e8655-be47-4d5b-aa4d-33042b39c9b6.gif)
 
-HTML5 + JavaScript (the dynamic duo)
+---
 
-Cloudflare Pages + Custom Domain (speed and style)
+## 🧪 Run Locally
 
-JS event listeners to beat autoplay restrictions
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/time-now-meme.git](https://github.com/your-username/time-now-meme.git)
+    ```
+2.  **Add Assets:** Ensure `AUDIO.mp3` is in the root folder.
+3.  **Launch:** Open `index.html` in your browser. No server required.
 
-Time widget powered by time.now (because time waits for no one)
+---
 
-🚀 Live DemoCheck it out here: https://nutterbutters.uk — your new favorite clock with a twist!🏃 Run Locally
+## 🌍 Customizing Timezone
 
-Clone the repo:git clone https://github.com/your-username/time-now-meme.git
+This project uses an external widget API. To localize it:
+1.  Visit the [Time.now Widget Generator](https://time.now).
+2.  Configure your preferred location.
+3.  Replace the existing widget `<iframe>` or `<script>` in `index.html`.
 
-Open index.html in your browser.
+---
 
-Make sure AUDIO.mp3 is in the root or assets/ folder.
+## 🤓 What I Learned
 
-🌏 Customize Your TimezoneWant your own timezone? Easy peasy:
+Building this project allowed me to solve several technical hurdles common in modern web development:
 
-Visit the time.now widget generator
+* **Autoplay Workarounds:** Implemented JS event listeners to bypass strict browser policies regarding unmuted autoplaying audio.
+* **DNS & Deployment:** Managed custom domain mapping and SSL handshake configurations within the Cloudflare ecosystem.
+* **Asset Optimization:** Balanced high-quality GIF backgrounds and audio files with performance to ensure a low "Time to First Byte" (TTFB).
+* **Documentation:** Focused on creating a professional, scannable README that effectively communicates technical value.
 
-Pick your timezone
+---
 
-Swap out the embed code in index.html
+## 💬 Reflection
 
-📚 What I Learned
+This project started as a simple experiment with a time widget. I decided to push it further by adding Maxwell the cat and Kirby music to show that technical projects can have personality. It’s a functional proof-of-concept for my ability to build, brand, and deploy web applications from scratch.
 
-How to blend multimedia (audio + visuals) into a web project with style
+> **"Functional, deployed, and fun — this is how I learn and build in public."**
 
-Tackling browser autoplay quirks like a champ
+---
 
-Deploying a live site with custom DNS and SSL via Cloudflare
-
-Balancing tech skills with meme-worthy creativity
-
-Optimizing GIF previews for GitHub README magic
-
-Writing docs that recruiters and collaborators actually want to read
-
-💭 ReflectionStarted as a simple time widget, but I wanted it to be more than just functional — it had to be fun, cute, and memorable. Maxwell the spinning cat and Kirby tunes bring the cozy vibes, making this project a playful flex of my skills.
-
-“Functional, deployed, and fun — that’s how I roll when I build in public.”
+### 🤝 Contributing
+Feel free to fork this repo and add your own memes! Pull requests are always welcome.
