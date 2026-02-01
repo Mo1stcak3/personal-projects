@@ -1,7 +1,5 @@
 import requests
 
-from space import space
-
 class Services:
     
     #This is how we can access the Google Maps and Google Geolocation API using this API key
@@ -63,6 +61,7 @@ class Services:
             return []
 
         return data.get("results", [])
+
 
 
 
