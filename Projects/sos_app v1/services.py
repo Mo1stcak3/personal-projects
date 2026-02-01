@@ -7,7 +7,7 @@ class Services:
     #This is how we can access the Google Maps and Google Geolocation API using this API key
     
     def __init__(self): 
-        self.gmaps_key = "AIzaSyB97kGdnQHRep9VDN4UWbhN6F-6tsbEfx4"
+        self.gmaps_key = "Your GMAPS API KEY"
 
     #This is where the GeoLocation API comes to locate the user using their coordinates.
 
@@ -63,6 +63,7 @@ class Services:
             return []
 
         return data.get("results", [])
+
 
 
 
