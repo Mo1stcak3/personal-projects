@@ -13,9 +13,9 @@ I’m a backend-focused IT student expanding into GUI development. I wanted to b
 
 ## 🖼️ Preview
 
-**Initial Interface** ![Initial Interface](sos_app-v1/Preview/ui_1.png)
+**Initial Interface** ![Initial Interface](Preview/ui_1.png)
 
-**Hospital Results Example** ![Hospital Results](sos_app-v1/Preview/ui_2(results).png)
+**Hospital Results Example** ![Hospital Results](Preview/ui_2(results).png)
 
 ---
 
