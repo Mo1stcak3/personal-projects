@@ -1,0 +1,14 @@
+# SOS App v1 Requirements
+# Install all dependencies with: pip install -r requirements.txt
+
+# Core language
+python>=3.10          # Programming language (ensure version 3.10 or higher)
+
+# GUI
+customtkinter==5.2.1  # Modern Tkinter wrapper for GUI
+
+# Networking
+requests==2.31.0      # HTTP library for Google Maps API calls
+
+# Google Maps SDK
+googlemaps==4.10.0    # Official Google Maps Python client
